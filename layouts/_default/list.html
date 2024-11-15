@@ -14,12 +14,14 @@
 					{{ range .Paginator.Pages }}
 						{{ .Render "summary" }}
 					{{ end }}
-					<div class="d-flex justify-content-center">
-						{{ partial "pagination.html" . }}
-					</div>
 				</div>
 				<div class="col text-end">
 					{{ partial "sidebar.html" . }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="d-flex justify-content-center">
+					{{ partial "pagination.html" . }}
 				</div>
 			</div>
 		</div>
