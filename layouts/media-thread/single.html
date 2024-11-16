@@ -3,7 +3,6 @@
 		<article>
 			<h1>{{ .Title }}</h1>
 			<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-			<h1>testing something.</h1>
 			<div>
 				{{ .Content }}
 			</div>
@@ -23,5 +22,4 @@
 			{{ end }}
 		</article>
 	</main>
-{{ partial "sidebar.html" . }}
 {{ end }}
