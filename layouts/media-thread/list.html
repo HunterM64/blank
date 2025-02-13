@@ -1,15 +1,22 @@
 {{ define "main" }}
 	<main>
-		<div class="mx-3">
-			<div>
-				{{ if or .Title .Content }}
-					<h1>Media Thread</h1>
-					<hr>
-					{{ end }}
-
-					{{ range .Pages }}
-						{{ .Render "summary" }}
-					{{ end }}
+		<div class="d-flex justify-content-center">
+			{{ if or .Title .Content }}
+			<h1>Media Thread</h1>
+			{{ end }}			
+		</div>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="col col-2"></div>
+				<div class="col">
+					<div>
+						{{ range .Pages }}
+							{{ .Render "summary" }}
+						{{ end }}
+					</div>
+				</div>
+				<div class="col col-2"></div>
 			</div>
 		</div>
 	</main>

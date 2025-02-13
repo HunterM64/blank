@@ -1,38 +1,15 @@
-{{ define "main" }}
-<style>
-	body {
-		background-image:url('/complete-7.png');
-		background-attachment:fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-</style>	
+{{ define "main" }}	
 <main>
-		<div class="d-flex justify-content-center">
-			<div class="card">
-				<h1>Welcome to my website!</h1>
-			</div>
-		</div>
-		<br>
-		<div class="d-flex justify-content-center">
-				<div class="tenor-gif-embed w-25" data-postid="10106793974900600736" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/dragonmaid-master-duel-yu-gi-oh-gif-10106793974900600736">Dragonmaid Master Duel GIF</a>from <a href="https://tenor.com/search/dragonmaid-gifs">Dragonmaid GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-			<!-- <div class="w-75" style="text-align:justify">
-				<p>Proident reprehenderit pariatur velit irure id. Minim velit cupidatat in quis nulla anim irure consequat commodo commodo. Quis fugiat aute occaecat deserunt sit do excepteur nisi id. Et laboris mollit cillum fugiat occaecat ad velit elit. Deserunt laborum proident reprehenderit proident.</p>
-				<p>Exercitation nulla enim nulla aliquip eu non. Consectetur irure ut veniam ut dolore fugiat velit velit. Sint est Lorem deserunt voluptate sit nulla do commodo id id est anim. Irure pariatur proident id nisi pariatur excepteur. Quis ipsum qui exercitation labore aliquip ipsum et esse anim. Ipsum proident commodo elit ad eu consectetur voluptate ut cupidatat.</p>
-				<p>Ex eu magna do proident reprehenderit nostrud do eiusmod aute deserunt. Dolor quis sunt sit mollit magna exercitation nostrud aliquip id pariatur incididunt deserunt adipisicing sit. Ipsum magna nostrud sit do tempor aliqua irure reprehenderit in laborum adipisicing. Aute anim reprehenderit aliqua fugiat ad qui. Ullamco culpa eiusmod sint consectetur tempor fugiat sit ut occaecat non consectetur esse voluptate.</p>
-			</div> -->
-
-			
-			
-		
-
-
-			
-
-			
-
-
-
-		</div>
-	</main>
+	<div class="d-flex justify-content-center text-center">
+		<h1>Welcome to my website!</h1>
+	</div>
+	<br>
+	<div class="d-flex justify-content-center text-center">
+		This is my website where I post stuff. Mainly my media thread collection. Enjoy your stay!
+	</div>
+	<br>
+	<div class="d-flex justify-content-center text-center">
+		{{ partial "sidebar.html" . }}
+	</div>
+</main>
 {{ end }}
