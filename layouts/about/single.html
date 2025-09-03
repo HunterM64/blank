@@ -1,24 +1,76 @@
 {{ define "main" }}
-	<main>
-		<article>
-			<h1>{{ .Title }}</h1>
-			<div>
-				{{ .Content }}
+	<div class="row mx-2 mb-2">
+		<div class="col-xxl-5">
+			<div class="card">
+				<div class="card-header">
+					Links
+				</div>
+				<div class="card-body">
+					<a href="https://bsky.app/profile/hunterm64.org" target="_blank">Bluesky</a>
+					<a href="https://www.youtube.com/@hunterm646" target="_blank">YouTube</a>
+					<a href="https://github.com/HunterM64" target="_blank">GitHub</a>
+				</div>
 			</div>
-			{{ with .Params.tags }}
-			<div>
-				<ul id="tags">
-					{{ range . }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-					{{ end }}
-				</ul>
+		</div>
+	</div>
+
+	<div class="row mx-2 mb-2">
+		<div class="col"></div>
+		<div class="col-xxl-5">
+			<div class="card">
+				<div class="card-header">
+					Who I Am
+				</div>
+				<div class="card-body">
+					- nobody lmao
+					- full time software developer
+					- part time loser lol
+				</div>
 			</div>
-			{{ end }}
-			{{ with .Site.Config.Services.Disqus.Shortname }}
-			<div>
-				{{ template "_internal/disqus.html" . }}
+		</div>
+		<div class="col"></div>
+	</div>
+
+	<div class="row mx-2 mb-2">
+		<div class="col"></div>
+		<div class="col-xxl-5">
+			<div class="card">
+				<div class="card-header">
+					What I Do
+				</div>
+				<div class="card-body">
+					- nothing lmao
+					- i develop the software
+					- i play games
+					= i listen to music
+					- i'd like to do more creative ventures
+						- i own a camera but don't do a lot of photography
+						- i own a drawing tablet but don't draw
+						- i think about writing something someday, or creating a game
+							- but i don't really have any concrete ideas
+				</div>
 			</div>
-			{{ end }}
-		</article>
-	</main>
+		</div>
+	</div>
+
+	<div class="row mx-2">
+		<div class="col"></div>
+		<div class="col-xxl-9">
+			<div class="card">
+				<div class="card-header">
+					Things I Use
+				</div>
+				<div class="card-body">
+					List of tech I own / how I use it because why not
+					- computers
+						- server
+					- consoles
+					- cameras
+					- etc
+					- whatever else I feel like sharing because we need some damn content here.		
+				</div>
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
 {{ end }}
