@@ -1,17 +1,91 @@
 {{ define "main" }}	
 <main>
-	<div class="row">
-		<div class="col col-10">
-			<div class="d-flex justify-content-center text-center">
-				<h1>Welcome to my website!</h1>
+	<script>
+		indexTextHidden = false;
+
+		function hideText() {
+			if (indexTextHidden) {
+				document.getElementById("index-text").classList.remove('d-none');
+				document.getElementById("hideTextButton").innerText = "click me to hide";
+				indexTextHidden = false;
+			} else {
+				document.getElementById("index-text").classList.add('d-none');
+				document.getElementById("hideTextButton").innerText = "click me to show";
+				indexTextHidden = true;
+			}
+		}
+	</script>
+
+	<div class="row mx-3">
+		<div class="col col-xxl-2 d-none d-xxl-block">
+			<div class="card mb-1">
+				<div class="card-body">
+					<div class="tenor-gif-embed" data-postid="623612504039691817" data-share-method="host" data-aspect-ratio="1.04184" data-width="100%"><a href="https://tenor.com/view/ruto-spin-legend-of-zelda-ocarina-of-time-gif-623612504039691817">Ruto Spin GIF</a>from <a href="https://tenor.com/search/ruto-gifs">Ruto GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+				</div>
 			</div>
-			<br>
-			<div class="d-flex justify-content-center text-center">
-				This is my website where I post stuff. Mainly my media thread collection. Enjoy your stay!
+			<div class="card mb-1">
+				<div class="card-body">
+					<div class="tenor-gif-embed" data-postid="10106793974900600736" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/dragonmaid-master-duel-yu-gi-oh-gif-10106793974900600736">Dragonmaid Master Duel GIF</a>from <a href="https://tenor.com/search/dragonmaid-gifs">Dragonmaid GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+				</div>
+			</div>
+			<div class="card mb-1">
+				<div class="card-body">
+					<div class="tenor-gif-embed" data-postid="5834997574832584319" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"><a href="https://tenor.com/view/xenosaga-shion-huh-gif-5834997574832584319">Xenosaga Shion GIF</a>from <a href="https://tenor.com/search/xenosaga-gifs">Xenosaga GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body text-center">
+					i made all of these
+				</div>
 			</div>
 		</div>
-		<div class="col col-sm-2">
-			{{ partial "sidebar.html" . }}
+		<div class="col col-xxl-8">
+				<div class="card">
+					<div class="card-header text-center">
+						<img src="/cooltext490050769324008.gif" style="max-width: 100%;"></img>
+					</div>
+					<div class="card-body">
+						<div class="text-end">
+							<button class="btn btn-success" type="button" onclick="hideText()" id="hideTextButton">click me to hide</button>
+						</div>
+						<div id="index-text">
+							<br>
+							<p>This is my website where I have stuff.</p>
+
+							<p>The current background image you are seeing (assuming you see sonic) has been lovingly captured off of my sega saturn running a totally legitimate copy of sonic jam, using an elgato game capture hd through it's corresponding game capture software running on a 2012 unibody macbook pro because that's the only way I could get the capture card to reliably work with lower resolution outputs. And then I mirrored the image and cropped it to shit so that Sonic would be where I kind of wanted him to be, in his little corner down there.</p>
+
+							<p>Here's an explanation of what's on the various pages:</p>
+
+							Blog:
+							<p class="ms-4">
+								This is where I have my blog stuff. Not a lot there because I don't really know what to write.
+							</p>
+							Media Thread:
+							<p class="ms-4">
+								This is where I write "reviews" of the media I consume. In quotations because I won't pretend I'm some kind of professional, and some entries very clearly have more effort put into them than others.
+							</p>
+							About:
+							<p class="ms-4">
+								This page has information about me, like who I am (nobody), what I do (nothing), and links to other websites that I'm on.
+							</p>
+							M64Wiki:
+							<p class="ms-4">
+								This is a link to another site, a wiki (powered by bookstack), that's run by me. I want to have some information from games that I play in it like Dark Souls because I don't like the Fextra wikis, but I haven't done much with that yet. I might also start using it as a way to like catalogue various things I own, like games, and have some information about them and like screenshots and pictures of the actual cartridge or etc. Haven't even started on that yet so I can't really say what it will end up looking like.
+							</p>
+						</div>
+					</div>
+					<div class="card-footer text-center">
+						<p class="mb-0">visitors</p>
+						<script type="text/javascript" src="https://counter.websiteout.com/js/24/0/0/1"></script>
+					</div>
+				</div>
+		</div>
+		<div class="col col-xxl-2 d-none d-xxl-block">
+			<div class="card">
+				<div class="card-body">
+					{{ partial "sidebar.html" . }}
+				</div>
+			</div>
 		</div>
 	</div>
 </main>
