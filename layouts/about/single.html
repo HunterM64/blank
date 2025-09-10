@@ -1,4 +1,36 @@
 {{ define "main" }}
+
+	<script>
+		toggledList = [];
+
+		function getToggled(id) {
+			if (toggledList.find(o => o.Name === id)) {
+				return toggledList[toggledList.findIndex(o => o.Name === id)].Value
+			} else {
+				return false;
+			}
+		}
+
+		function setToggled(id, value) {
+			if (toggledList.find(o => o.Name === id)) {
+				toggledList[toggledList.findIndex(o => o.Name === id)].Value = value;
+			} else {
+				toggledList.push({ Name: id, Value: value });
+
+			}
+		}
+
+		function toggleText(id) {
+			if (getToggled(id)) {
+				document.getElementById(id).classList.add('d-none');
+				setToggled(id, false);
+			} else {
+				document.getElementById(id).classList.remove('d-none');
+				setToggled(id, true);
+			}
+		}
+	</script>
+
 	<div class="row mx-2 mb-2">
 		<div class="col-xxl-2">
 			<div class="card">
@@ -30,7 +62,29 @@
 					<ul>
 						<li>Computer Programmer</li>
 						<li>EPIC gamer (yeah, I've beaten dark souls.)</li>
+						<ul style="list-style-type: none;">
+							<li>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleText('gamingToggle')">...</button>
+								<span id="gamingToggle" class="d-none"><br>
+									Here's all my consoles:
+									<ul>
+										<li>Nintendo Entertainment System</li>
+									</ul>
+								</span>
+							</li>
+						</ul>
 						<li>super OTAKU! (end of evangelion makes me cry)</li>
+						<li>if all goes to plan, I will start estrogen sometime in October 2025.</li>
+						<ul style="list-style-type: none;">
+							<li>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleText('estrogenToggle')">...</button>
+								<span id="estrogenToggle" class="d-none"><br>
+									I'm either a transgender woman or nonbinary. haven't decided yet, but it will probably depend on if i will be able to see myself as a woman or not. 
+									when i first started thinking about my gender identity i did first wonder if i was nonbinary but later thought i'd mostly lean into femininity anyways and that trans woman would probably fit me better, and now (for ME PERSONALLY) i find thoughts of being nonbinary as more a way of coping with my own struggles of accepting what i actually think my identity is. 
+									that all could change though, only time will tell.
+								</span>
+							</li>
+						</ul>
 					</ul>
 				</div>
 			</div>
@@ -44,8 +98,41 @@
 					<p>Here's some things I do:</p>
 					<ul>
 						<li>play video games</li>
+						<ul style="list-style-type: none;">
+							<li>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleText('videogamesToggle')">...</button>
+								<span id="videogamesToggle" class="d-none">
+									<br>
+									i like to play retro game like Sonic Adventure for the Sega Dreamcast
+								</span>
+							</li>
+						</ul>
 						<li>work</li>
+						<ul style="list-style-type: none;">
+							<li>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleText('workToggle')">...</button>
+								<span id="workToggle" class="d-none">
+									<br>
+									i work as a full time computer programmer. 
+									every day I worry that I am not good enough and that i'll be let go any day now, which would essentially ruin my life in the way that i live it currently. 
+									i wouldn't die or end up homeless because i do thankfully still have family to fall back on but it took me a year after graduating to find this job and the computer science job market hasn't gotten any better from what i've heard. 
+									i'd hate to go back to working retail. 
+									i hated it so much.
+								</span>
+							</li>
+						</ul>
 						<li>stay inside</li>
+						<ul style="list-style-type: none;">
+							<li>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleText('stayinsideToggle')">...</button>
+								<span id="stayinsideToggle" class="d-none">
+									<br>
+									i don't like going outside because it feels like I'm always being monitored and judged and if i do anything that deviates from "the norm" everyone will know and think lesser of me as a result even though the people I am referring to are strangers in the middle of Walmart that I do not know and likely will never see again. 
+									but whatever i just do my best to deal with the constant irrational worries plaguing my mind. 
+									i just do a lot of online shopping instead.
+								</span>
+							</li>
+						</ul>
 					</ul>
 				</div>
 			</div>
@@ -53,14 +140,156 @@
 	</div>
 
 	<div class="row mx-2">
-		<div class="col"></div>
-		<div class="col-xxl-10">
+		<div class="col">
 			<div class="card">
 				<div class="card-header text-center">
 					Things I Use
 				</div>
 				<div class="card-body">
-					TODO: this		
+					<p>Personal Computers:</p>
+					<div class="accordion" id="thingsAccordion">
+						<div class="accordion-item">
+							<p class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFramework" aria-expanded="false" aria-controls="collapseFramework">
+									Framework 13 Laptop
+								</button>
+							</p>
+							<div id="collapseFramework" class="accordion-collapse collapse" data-bs-parent="thingsAccordion">
+								<div class="accordion-body">
+									<div class="row">
+										<div class="col-xxl-4">
+											<code style="display:block;white-space:pre-wrap;">
+<b>OS:</b> Fedora Linux 42 (Workstation Edition) x86_64 
+Host: Laptop 13 (AMD Ryzen 7040Series) A7 
+Kernel: 6.15.10-200.fc42.x86_64 
+Shell: fish 4.0.2 
+DE: GNOME 48.4 (wayland) 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Adwaita [GTK2/3] 
+Icons: Adwaita [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: AMD Ryzen 7 7840U (16) @ 5.134GHz 
+GPU: AMD Radeon 780M Graphics
+Memory: 16.0 GiB
+											</code>
+										</div>
+										<div class="col">
+											<p>
+												I'd say for the most part this is the computer that I use the most these days.
+												I still visit my family a lot, and laptops are obviously very portable, so I just end up doing a lot of things on here anyways.
+												I've been trying to use my server more to try and make the things I work on computer agnostic to help alleviate things somewhat, but I do still like using my laptop even when I'm at home.
+												Laptops are just cool.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<p class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMacMini" aria-expanded="false" aria-controls="collapseMacMini">
+									Mac mini
+								</button>
+							</p>
+							<div id="collapseMacMini" class="accordion-collapse collapse" data-bs-parent="thingsAccordion">
+								<div class="accordion-body">
+									<div class="row">
+										<div class="col-xxl-4">
+											<code style="display:block;white-space:pre-wrap;">
+OS: macOS 15.6.1 (24G90) arm64 
+Host: Mac mini (M1, 2020) 
+Kernel: 24.6.0 
+Shell: zsh 5.9 
+DE: Aqua 
+WM: Rectangle 
+CPU: Apple M1 (8) 
+GPU: Apple M1 (8) 
+Memory: 8.00 GiB
+											</code>
+										</div>
+										<div class="col">
+											<p>
+												I bought this used from eBay in 2024. I kind of wished I had shopped around a bit longer for a model with more RAM, but I make do. 
+												The base M4 mini model is rather enticing, I must say, though I don't really know if I'll be upgrading any time soon. 
+												I don't really do anything intensive with my Mac after setting up my server anyways, I mostly only use it for light tasks like web browsing, watching videos, or streaming games.
+											</p>
+											<p>
+												It might be embarassing to say, but a LARGE reason I bought this was so that I could play Sonic Dream Team on Apple Arcade. 
+												I do own an iPhone or iPad that I could have also used, but I like gaming on like an actual computer more, you know? 
+												I do also like the ecosystem integrations, which is mainly the other reason why I now use this as my main desktop computer.
+											</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<p class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWindows" aria-expanded="false" aria-controls="collapseWindows">
+									Gaming PC
+								</button>
+							</p>
+							<div id="collapseWindows" class="accordion-collapse collapse" data-bs-parent="thingsAccordion">
+								<div class="accordion-body">
+									<div class="row">
+										<div class="col-xxl-4">
+											<code style="display:block;white-space:pre-wrap;">
+OS: Windows 10 (Education) x86_64
+Kernel: WIN32_NT 10.0.19045.6216 (22H2)
+DE: Fluent
+WM: Desktop Window Manager
+Icons: Recycle Bin
+Terminal: Windows Terminal 1.22.12111.0
+CPU: AMD Ryzen 5 3600 (12) @ 4.20 GHz
+GPU: AMD Radeon RX 5700 XT
+Memory: 32.0 GiB
+											</code>
+										</div>
+										<div class="col">
+											<p>
+												This was my main computer for the longest time, since I first built it in 2019. 
+												Nowadays that I use my Mac mini instead, this has now been relegated to primarily being my gaming computer, or ripping movies / CDs since it has a Blu-Ray drive.
+												The way I tend to utilize my PC is by streaming games from Steam on to other devices, such as my Mac or Steam Deck.
+											</p>
+											<p>
+												I find that, especially with everything being hooked up over ethernet, it works surprisingly well.
+												I played the entirety of Act I of ULTRAKILL this way and I never felt any kind of noticeable input lag or anything like that.
+												Though, I do need to work on it a bit more, adding more non-Steam games that I have downloaded so I can stream those games too.
+												Sometimes I'll also just hook it straight up to my TV and play that way too. Did this a lot when I was ripping a lot of movies at the same time, since the movies are all in the living room with the TV anyways.
+											</p>
+											<p>
+												One issue though, I'm still running Windows 10.
+												I assume I can upgrade to 11 if I just enable TPM in my BIOS, but I'm also considering installing Linux instead.
+												Windows 11 is like fine to use I guess, and I have an Education license so it should be a similar experience to Windows 11 Pro.
+												I'm pretty sure that's what my work laptop is running and it's fine.
+												But, I also feel like Microsoft is going to keep pushing more AI garbage into the operating system and I ain't about that, which is why I've been considering Linux instead.
+												My main concern is game compatability since this is primarily for gaming, but most compatability issues are with like live service games with anti-cheat, and if I am playing those games, I'm probably doing it on my PS5 anyways to be able to play with my friends.
+												Either way, I haven't decided what I want to do yet, even though that October 2025 deadline is approaching fast, at the time of writing (September 2025).
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+
+					<p>Home Server:</p>
+					<div class="accordion" id="serverAccordion">
+
+					</div>
+
+					<p>idk other stuff:</p>
+					<div class="accordion" id="miscAccordion">
+
+					</div>
+					analogue pocket
+					steam deck
+					hiby digital m300
+					canon t2i
+					canon powershot
+					??
 				</div>
 			</div>
 		</div>
