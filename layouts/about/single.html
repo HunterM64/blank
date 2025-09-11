@@ -139,7 +139,7 @@
 		</div>
 	</div>
 
-	<div class="row mx-2">
+	<div class="row mx-2 mb-3">
 		<div class="col">
 			<div class="card">
 				<div class="card-header text-center">
@@ -275,21 +275,128 @@ Memory: 32.0 GiB
 						</div>	
 					</div>
 
+					<br>
+
 					<p>Home Server:</p>
 					<div class="accordion" id="serverAccordion">
+						<div class="accordion-item">
+							<p class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSynology" aria-expanded="false" aria-controls="collapseSynology">
+									Synology DS223j
+								</button>
+							</p>
+							<div id="collapseSynology" class="accordion-collapse collapse" data-bs-parent="serverAccordion">
+								<div class="accordion-body">
+									<p>2x Toshiba N300 8TB hard drives running in SHR.</p>
+									
+									<p>
+										Why did I get a Synology, and especially one of the weaker ones? Well, at the time I already had my Proxmox server up and running with a separate PC running as my NAS. 
+										After I moved out and the boot drive on the NAS PC started to show a SMART warning (it was already from an old used PC anyways), and all of my data was being stored on a 1TB USB hard drive, I decided I wanted to upgrade.
+										I thought it over and decided that I wanted something with a smaller footprint that was easy to just set up network shares with, because that's all I really needed.
+									</p>
+									<p>
+										I already knew about Synology NASes and after seeing some of the DSM features, I decided I would go with one of those. 
+										Since I already had a server that could run Docker and anything else, I didn't need anything "powerful", and with my budget at the time I settled on the 223j. 
+										Maybe the real mistake I made was getting a 2 bay model instead of 4, but 9 months later (at the time of writing) I still haven't even filled it halfway, and trust me I've been putting plenty of stuff on there.
+									</p>
+									<p>
+										I think my most utilized feature is Synology Photos because it's a nice and easy way to back up photos off my phone since that's what typically takes up the most amount of space on there. 
+										I also like Synology Drive in the same way that I use Google Drive, primarily to write up documents about random things like routes for Dark Souls playthroughs or making lists of games that I want to... legally obtain... sometime later.
+										I also have a lot of my media on there for Jellyfin (all ripped from my own legally obtained copies, of course), files that I just want to be able to access on multiple computers, and of course copies of my most important files.
+									</p>
+								</div>
+							</div>
+						</div>
 
+						<div class="accordion-item">
+							<p class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProxmox" aria-expanded="false" aria-controls="collapseProxmox">
+									Proxmox Server
+								</button>
+							</p>
+							<div id="collapseProxmox" class="accordion-collapse collapse" data-bs-parent="serverAccordion">
+								<div class="accordion-body">
+									<p>Proxmox is pretty cool.</p>
+									<p>Here's what I run on it:</p>
+									<ul>
+										<li>Debian LXC running Jellyfin</li>
+										<p>I built this server specifically to run Jellyfin with Intel Quick Sync hardware acceleration thanks to the i5-12400 processor.</p>
+										<li>Alpine LXC running Gitea</li>
+										<li>Alpine LXC running Ubooquity</li>
+										<li>ALpine LXC running Visual Studio Code Server</li>
+										<p>I'm using this to write this page right now.</p>
+										<li>Debian VM running Docker</li>
+										Here's what's currently on Docker:
+										<ul>
+											<li>Portainer</li>
+											<li>Heimdall</li>
+											<li>Gitea Act Runner</li>
+											<li>itzg Minecraft Server</li>
+											<p>TBH I barely use this because my friends play on console so if I want to do multiplayer I have to be on Bedrock anyways. Not that I care as much about the difference than the average Java player.</p>
+										</ul>
+										<li>Void VM for using Handbrake</li>
+										<p>No particular reason for using Void, just felt like installing it and then decided to put it to use with Handbrake to re-encode my movie rips.</p>
+										<li>Fedora VM for development</li>
+										<p>
+											This is what I used for development before setting up the VS Code Server, but I'll probably still use it every now and then for other things as well. 
+											Whenever I want to use it I can just remote desktop into it from any other computer I'm currently using and get going, it's nice.
+										</p>
+										<li>Windows XP VM</li>
+										<p>I have Sonic Schoolhouse installed on here because I couldn't get it running on Windows 10.</p>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 
-					<p>idk other stuff:</p>
-					<div class="accordion" id="miscAccordion">
+					<br>
 
-					</div>
-					analogue pocket
-					steam deck
-					hiby digital m300
-					canon t2i
-					canon powershot
-					??
+					<p>Here's some other stuff I like in no particular order:</p>
+					<ul>
+						<li>Analogue Pocket</li>
+						<p>
+							People say this is overrated, and I guess yeah if you just want to be able to emulate a ton of different consoles, there are absolutely more cost effective options. 
+							But wow, the screen. It's just gorgeous to look at, and the customizable video options are very nice as well.
+							I don't have a ton of cartridges, but obviously one of the big features of the device is being able to play those, which is nice because my DMG has a dying screen.
+							I also got the adapter that allows Game Gear cartridges to be played, which is nice because I've bought a few Sonic Game Gear games without actually owning a Game Gear.
+							Outside of cartridges, I've purposely kept the FPGA cores that I have installed on it to just handheld consoles because I think that just suits it.
+							I have other ways of emulating other consoles anyways.
+						</p>
+						
+						<li>Steam Deck</li>
+						<p>
+							I preordered one of these a few days after the initial announcement, and I'm really glad I did. I personally got the 256 GB model. 
+							Alongside my Framework laptop, this almost always comes with me whenever I'm travelling somewhere.
+							I use it to play a lot of less demanding games while I'm out, alongside emulating consoles that something like my Pocket or Vita can't handle.
+							I also use it to stream games from my main gaming PC to my TV, using the JSAUX dock to hook it up with HDMI and Ethernet, and then using either using my wireless Xbox 1 controller or setting up a folding table if I want to use a keyboard and mouse with a USB extension cord.
+							All in all, super happy with the device.
+						</p>
+						
+						<li>Hiby Digital M300</li>
+						<p>
+							I use this for like all of my music listening purposes outside of when I'm just using my Airpods with my iPhone for convenience. 
+							I don't like the button layout as much as I do the button layout on the R3 Pro Saber, but that mine stopped turning on and I wanted something with streaming capabilities. 
+							Unfortunately, the R4 with it's better button layout and 4.4mm output came out like a month later. I'm only a little mad about it.
+							My favorite headphone set is my Sennheiser HD6XX, and my favorite IEM is my Moondrop Blessing 2: Dusk.
+						</p>
+
+						<li>Canon T2i</li>
+						<p>
+							Grabbed this from eBay for a decent price. One way I've gotten cheaper lenses for it is by grabbing some older ones from antique stores and getting an adapter. 
+							My favorite is a Vivitar Series 1 70-210mm lens. It's big and heavy and cool. I've taken some nice photos with it.
+							I do also have the original 18-55mm kit lens, and a 24mm lens that I got as a Christmas gift. 
+							They're nice because I can actually use autofocus with them.
+						</p>
+
+						<li>Canon Powershot SX720 HS</li>
+						<p>
+							I got this for pretty cheap at a garage sale. 
+							It's fine, more portable than my DSLR. 
+							Honestly, my phone is probably better, but I just like having dedicated devices for things. 
+							It's more fun that way sometimes.
+						</p>
+
+					</ul>
 				</div>
 			</div>
 		</div>
