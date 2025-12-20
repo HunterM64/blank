@@ -93,7 +93,7 @@
 							</li>
 						</ul>
 						<li>super OTAKU! (end of evangelion makes me cry)</li>
-						<li>if all goes to plan, I will start estrogen sometime in October 2025.</li>
+						<li>if all goes to plan, I will start estrogen sometime in October 2025. (due to pharmacy troubles it ended up being November 12th, 2025.)</li>
 						<ul style="list-style-type: none;">
 							<li>
 								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleText('estrogenToggle')">...</button>
@@ -207,27 +207,31 @@
 									<div class="row">
 										<div class="col-xxl-4">
 											<code style="display:block;white-space:pre-wrap;">
-<b>OS:</b> macOS 15.6.1 (24G90) arm64 
-<b>Host:</b> Mac mini (M1, 2020) 
-<b>Kernel:</b> 24.6.0 
+<b>OS:</b> macOS Sequoia 15.7.3 (24G419) arm64 
+<b>Host:</b> Mac Mini (2024) 
+<b>Kernel:</b> Darwin 24.6.0
 <b>Shell:</b> zsh 5.9 
 <b>DE:</b> Aqua 
-<b>WM:</b> Rectangle 
-<b>CPU:</b> Apple M1 (8) 
-<b>GPU:</b> Apple M1 (8) 
-<b>Memory:</b> 8.00 GiB
+<b>WM:</b> Quartz Compositor 278.4.7 
+<b>CPU:</b> Apple M4 (10) @ 4.46 Ghz 
+<b>GPU:</b> Apple M4 (10) @ 1.58 Ghz [Integrated] 
+<b>Memory:</b> 24.00 GiB
 											</code>
 										</div>
 										<div class="col">
 											<p>
-												I bought this used from eBay in 2024. I kind of wished I had shopped around a bit longer for a model with more RAM, but I make do. 
-												The base M4 mini model is rather enticing, I must say, though I don't really know if I'll be upgrading any time soon. 
-												I don't really do anything intensive with my Mac after setting up my server anyways, I mostly only use it for light tasks like web browsing, watching videos, or streaming games.
-											</p>
-											<p>
+												I originall bought a used base model M1 mac mini from eBay in 2024. I kind of wished I had shopped around a bit longer for a model with more RAM, but I made do. 
 												It might be embarassing to say, but a LARGE reason I bought this was so that I could play Sonic Dream Team on Apple Arcade. 
 												I do own an iPhone or iPad that I could have also used, but I like gaming on like an actual computer more, you know? 
 												I do also like the ecosystem integrations, which is mainly the other reason why I now use this as my main desktop computer.
+											</p>
+											<p>
+												Eventually, I decided it was about time that I should upgrade. Especially with RAM prices due to the shortage happening. FUCK AI!!!!!
+												Anyways, I saw that it was on sale one day. I had originally planned on just getting the base model, 16 gigs of RAM and 256 gigs of storage.
+												However, I also saw that the maxed out model (24 and 512 respectively) was also on sale, and I had just gotten my Christmas bonus from work, so I decided to go with that instead.
+												I just received the computer a day ago at the time of writing, so we'll see how I eventually end up feeling about making that decision.
+												One thing I'm really excited for is the ability to take this with me basically anywhere, due to the size of it. 
+												I still visit my parents somewhat often, so the prospect of being able to just take my entire dekstop with me every time is really cool to me.
 											</p>
 										</div>
 									</div>
@@ -329,8 +333,11 @@
 									<p>Proxmox is pretty cool.</p>
 									<p>Here's what I run on it:</p>
 									<ul>
-										<li>Debian LXC running Jellyfin</li>
-										<p>I built this server specifically to run Jellyfin with Intel Quick Sync hardware acceleration thanks to the i5-12400 processor.</p>
+										<li>Debian LXC running Jellyfin and Tunarr and Tailscale</li>
+										<p>I built this server specifically to run Jellyfin with Intel Quick Sync hardware acceleration thanks to the i5-12400 processor. 
+											Tunarr just seemed fun, specifically putting together a channel with a bunch of anime and including advertisements that I've found on the DVDs that I've ripped, just for fun.
+											Originally I was kind of scared of Tailscale, I was a bit worried about it being complicated or unsecure, but it was super simple to set up. 	 
+										</p>
 										<li>Alpine LXC running Gitea</li>
 										<li>Alpine LXC running Ubooquity</li>
 										<li>ALpine LXC running Visual Studio Code Server</li>
@@ -344,13 +351,8 @@
 											<li>itzg Minecraft Server</li>
 											<p>TBH I barely use this because my friends play on console so if I want to do multiplayer I have to be on Bedrock anyways. Not that I care as much about the difference than the average Java player.</p>
 										</ul>
-										<li>Void VM for using Handbrake</li>
-										<p>No particular reason for using Void, just felt like installing it and then decided to put it to use with Handbrake to re-encode my movie rips.</p>
-										<li>Fedora VM for development</li>
-										<p>
-											This is what I used for development before setting up the VS Code Server, but I'll probably still use it every now and then for other things as well. 
-											Whenever I want to use it I can just remote desktop into it from any other computer I'm currently using and get going, it's nice.
-										</p>
+										<li>Fedora Kinoite VM for using Handbrake</li>
+										<p>For some reason I can't get remote desktop working on this. I might end up changing what OS I use handbrake on once again.</p>
 										<li>Windows XP VM</li>
 										<p>I have Sonic Schoolhouse installed on here because I couldn't get it running on Windows 10.</p>
 									</ul>
